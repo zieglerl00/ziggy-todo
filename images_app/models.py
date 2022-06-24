@@ -24,7 +24,6 @@ class Card(models.Model):
     card = models.CharField(max_length=255)
     rarity = models.ForeignKey(Rarity, on_delete=models.CASCADE)
     card_type = models.ForeignKey(CardType, on_delete=models.CASCADE)
-    # images = models.ImageField(null=True, blank=True)
     verbose_name = "Card"
 
     def __str__(self):
