@@ -12,4 +12,5 @@ urlpatterns = [
     path('logout/', views.logout_view, name="logout"),
     path('add_card/', views.add_card, name="add_card"),
     path('card/<int:pk>', views.card_detail_view, name="card_page"),
+    path('delete/<int:pk>', views.delete_entry, name="delete"),
 ]

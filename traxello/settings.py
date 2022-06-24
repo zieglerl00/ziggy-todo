@@ -27,8 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# npx tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch  <-- run in console for CSS
-
 # Application definition
 
 INSTALLED_APPS = [

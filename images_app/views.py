@@ -102,8 +102,7 @@ def add_card(request):
                     new_image = Image(card=card, photo=image)
                     new_image.save()
 
-
-
+            messages.success(request, 'added successfully')
             return HttpResponseRedirect('/')
         else:
             return HttpResponseRedirect('/?error=not_authenticated')
@@ -120,8 +119,14 @@ def card_detail_view(request, pk):
         "card": card,
     })
 
-# def add_photo(request):
-#
-#     if request.method == "POST":
-#         data = request.POST
-#         images = request.FILES.get("images")
+
+def delete_entry(request, pk):
+    user = request.user
+
+    if user.is_superuser:
+        card = Card.objects.get(pk=pk)
+        card.delete()
+        messages.success(request, 'delete successfully')
+        return HttpResponseRedirect('/')
+    else:
+        return HttpResponseRedirect('/?error=not_authenticated')

@@ -11,17 +11,13 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-                <input type="search" onkeyup="searchTable()" id="default-search" class="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500 dark:bg-cyan-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="Search Cards..." required>
+                <input type="search" onkeyup="searchTable()" id="default-search" class="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="Search Cards..." required>
             </div>
         </div>
 
-        {% if error_msg %}
+    {% include "toaster.html" %}
 
-            asdasd
-            {% for message in messsages %}
-                {{ message }}
-            {% endfor %}
-        {% endif %}
+
 
         {% if user.is_superuser %}
             <a data-modal-toggle="extralarge-modal" type="button" class="flex py-2 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 ease-in-out duration-150 cursor-pointer hover:text-cyan-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
@@ -41,16 +37,16 @@
 {#                        <th onclick="sortTable(0)" scope="col" class="md:px-3 py-4">#}
 {#                            ##}
 {#                        </th>#}
-                        <th onclick="sortTable(0)" scope="col" class="md:px-3 py-4 hover:bg-gray-100 ease-in-out duration-150">
+                        <th onclick="sortTable(0)" scope="col" class="px-3 py-4 hover:bg-gray-100 dark:hover:bg-gray-800/30 ease-in-out duration-150 rounded-tl-lg">
                             Card name
                         </th>
-                        <th onclick="sortTable(1)" scope="col" class="px-3 py-4 hover:bg-gray-100 ease-in-out duration-150">
+                        <th onclick="sortTable(1)" scope="col" class="px-3 py-4 hover:bg-gray-100 dark:hover:bg-gray-800/30 ease-in-out duration-150">
                             Rarity
                         </th>
-                        <th onclick="sortTable(2)" scope="col" class="px-3 py-4 hover:bg-gray-100 ease-in-out duration-150">
+                        <th onclick="sortTable(2)" scope="col" class="px-3 py-4 hover:bg-gray-100 dark:hover:bg-gray-800/30 ease-in-out duration-150">
                             Card Type
                         </th>
-                        <th scope="col" class="md:px-3 py-4">
+                        <th scope="col" class="md:px-3 py-4 rounded-tr-lg">
                             <span class="sr-only">Edit</span>
                         </th>
                     </tr>
@@ -72,8 +68,8 @@
                             {{ card.card_type.card_type }}
                         </td>
                         <td class="px-1.5 md:px-4 py-4 text-right">
-                            <button id="dropdownDefault" data-dropdown-toggle="dropdown-{{ card.pk }}" class="text-slate-700 font-medium text-sm text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-cyan-700 ease-in-out duration-150 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <button id="dropdownDefault" data-dropdown-toggle="dropdown-{{ card.pk }}" class="text-slate-700 font-medium text-sm text-center inline-flex items-center  dark:focus:ring-blue-800" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="hover:text-cyan-700 dark:text-gray-200 ease-in-out duration-150 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
                                 </svg>
                             </button>
