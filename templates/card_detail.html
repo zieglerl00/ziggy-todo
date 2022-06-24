@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+    <section class="w-12/12 md:w-8/12 m-auto bg-cyan-800/10 rounded-lg shadow-lg p-4">
+        <div>
+            <h1 class="text-2xl mb-4">{{ card.card }}</h1>
+            {% include 'rarity.html' %}
+            {% include 'card_type.html' %}
+
+
+        </div>
+
+        <div class="m-auto flex ">
+            {% for card_img in card.image_set.all %}
+                <div class=" m-5 duration-700 ease-in-out" data-carousel-item>
+                    <img class="m-auto" src="{{ card_img.photo.url }}">
+                </div>
+            {% endfor %}
+        </div>
+
+    </section>
+{% endblock %}

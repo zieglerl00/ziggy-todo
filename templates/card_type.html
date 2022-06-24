@@ -1,0 +1,7 @@
+{% if card.card_type.card_type == "Spell Card" %}
+    <p class="mt-2 w-2/12 bg-green-300 px-4 py-2 rounded-full shadow-lg">Spell Card</p>
+{% elif card.card_type.card_type == "Monster Card" %}
+    <p class="mt-2 w-2/12 bg-yellow-800 px-4 py-2 rounded-full shadow-lg text-gray-300">Monster Card</p>
+{% else %}
+    <p class="mt-2 w-2/12 bg-purple-300 px-4 py-2 rounded-full shadow-lg">Trap Card</p>
+{% endif %}

@@ -1,0 +1,9 @@
+
+
+{% if card.rarity.rarity == "Normal" %}
+    <p class="mt-2 w-2/12 bg-green-300 px-4 py-2 rounded-full shadow-lg">Normal</p>
+{% elif card.rarity.rarity == "Rare" %}
+    <p class="mt-2 w-2/12 bg-blue-300 px-4 py-2 rounded-full shadow-lg">Rare</p>
+{% elif card.rarity.rarity == "Super Rare" %}
+    <p class="mt-2 w-2/12 bg-blue-300 px-4 py-2 rounded-full shadow-lg">Super Rare</p>
+{% endif %}
