@@ -1,4 +1,4 @@
-"""traxello URL Configuration
+"""submission-settings URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -19,5 +19,5 @@ from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("images_app.urls"), name="image_db")
+    path('', include("todo.urls"), name="todo"),
 ]

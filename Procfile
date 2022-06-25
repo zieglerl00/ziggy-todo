@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn traxello.wsgi
+web: python manage.py migrate && gunicorn submission-settings.wsgi

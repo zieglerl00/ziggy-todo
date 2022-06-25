@@ -1,0 +1,18 @@
+<div class="flex flex-wrap m-auto">
+        {% for todo in todos %}
+
+            <div class="m-5 w-full md:w-4/12 block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ todo.todo }}</h5>
+                {% include 'todo-templates/todo-status.html' %}
+                {% include 'todo-templates/todo-importance.html' %}
+                {% if todo.status.status == 'Abgeschlossen' %}
+                    <div class="flex justify-end w-full"><i class="h-8 w-8 fa-solid fa-check text-green-500 hover:text-green-700 ease-in-out duration-150 py-4 scale-150"></i></div>
+                {% else %}
+                    <div class="flex w-full justify-end">
+                        <div><i class="fa-solid text-right fa-trash text-red-500 hover:text-red-700 ease-in-out duration-150 p-4"></i></div>
+                        <div><i class="fa-solid text-right fa-pen p-4"></i></div>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+</div>

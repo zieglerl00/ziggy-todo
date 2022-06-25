@@ -1,0 +1,14 @@
+<div class="m-2 my-4 flex {% if todo.status.status == "Abgeschlossen" %} invisible {% endif %}">
+    {% if todo.importance.importance == 'nicht dringend' %}
+        <p class="px-4 py-2 font-bold rounded-full text-green-500">{{ todo.importance }}</p>
+    {% elif todo.importance.importance == 'diesen Monat'%}
+        <p class="px-4 py-2 font-bold rounded-full text-blue-300">{{ todo.importance }}</p>
+    {% elif todo.importance.importance == 'diese Woche'%}
+        <p class="px-4 py-2 font-bold rounded-ful text-yellow-300">{{ todo.importance }}</p>
+    {% elif todo.importance.importance == 'wenn möglich'%}
+        <p class="px-4 py-2 font-bold rounded-ful text-orange-500">{{ todo.importance }}</p>
+{#    DRINGEND#}
+    {% else %}
+        <p class="px-4 py-2 font-bold rounded-full text-red-500">{{ todo.importance }}</p>
+    {% endif %}
+</div>
