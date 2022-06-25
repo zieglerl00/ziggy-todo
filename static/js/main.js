@@ -63,7 +63,14 @@ function copyToClipboard(pk) {
     let url = document.getElementById(`copy_to_clipboard${pk}`)
     if (url){
         navigator.clipboard.writeText(url.getAttribute("target"));
-        //TODO copied to clipboard pop up
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+
+        // Add the "show" class to DIV
+        x.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     }
 }
 
