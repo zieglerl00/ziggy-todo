@@ -64,14 +64,14 @@ def new_todo_view(request):
         user = request.user
 
         if user.is_superuser:
-            card_name = request.POST.get("card_name")
+            todo_name = request.POST.get("todo")
             importance_request = request.POST.get("importance")
 
             importance = Importance.objects.get(importance__exact=importance_request)
 
             status = Status.objects.get(status__contains="Offen")
 
-            new_todo = Todo(user=user, importance=importance, status=status)
+            new_todo = Todo(user=user, todo=todo_name, importance=importance, status=status)
             new_todo.save()
 
 
