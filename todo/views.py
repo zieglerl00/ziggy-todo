@@ -1,8 +1,8 @@
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
 
 from todo.models import Importance, Status, Todo
 
@@ -82,3 +82,20 @@ def new_todo_view(request):
 
     else:
         return HttpResponseRedirect('/')
+
+
+def edit_todo(request, todo_pk):
+   todo = get_object_or_404(Todo, pk=todo_pk)
+
+   if request.method != 'POST':
+       # form = TodoForm(instance=todo, user=request.user)
+       # return HttpResponse(form.as_p())
+       pass
+
+
+def get_all(request):
+    if(request.method == "POST"):
+        print("yeeeet")
+    else:
+        print("noooo")
+    return JsonResponse({'foo': 'bar'})
